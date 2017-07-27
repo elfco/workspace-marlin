@@ -145,9 +145,9 @@ cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], functio
 
             var that = this;
 
-            chilipeppr.load(
-                "#com-chilipeppr-widget-serialport-instance",
-                "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+           chilipeppr.load(
+                "#com-chilipeppr-widget-spjs-instance",
+                "http://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
                 function() {
                     console.log("mycallback got called after loading spjs module");
                     cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
@@ -155,15 +155,15 @@ cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], functio
                         spjs.setSingleSelectMode();
                         spjs.init({
                             isSingleSelectMode: true,
-                            defaultBuffer: "default",
+                            defaultBuffer: "marlin",
                             defaultBaud: 115200,
-                            bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
+                            bufferEncouragementMsg: 'For your device please choose the "reprap" buffer in the pulldown and a 115200 baud rate before connecting.'
                         });
                         //spjs.showBody();
                         //spjs.consoleToggle();
 
                         that.widgetSpjs - spjs;
-                        
+
                         if (callback) callback(spjs);
 
                     });
