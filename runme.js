@@ -10,6 +10,8 @@
 // your final auto-generated-widget.html file, and push your latest
 // changes to your backing github repo.
 
+process.env.PORT = 3000;
+
 var http = require('http'),
   url = require('url'),
   path = require('path'),
@@ -1371,3 +1373,5 @@ var getGithubUrl = function(callback) {
 }
 
 init();
+
+console.log("listening port ", process.env.PORT);
